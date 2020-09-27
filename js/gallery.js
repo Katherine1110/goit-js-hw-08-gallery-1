@@ -3,6 +3,7 @@ import galleryItems from './gallery-items.js';
 const galleryContainer = document.querySelector(".js-gallery");
 const modal = document.querySelector(".js-lightbox");
 const modalImg = document.querySelector(".lightbox__image");
+const modalContent = document.querySelector(".lightbox__image");
 const overlay = document.querySelector(".lightbox__overlay")
 const modalBtnClose = document.querySelector(".lightbox__button");
 const modalBtnRight = document.querySelector(".scroll-right");
@@ -15,8 +16,10 @@ overlay.addEventListener("click", modalCloseByOverlayClick);
 document.addEventListener("keydown", modalCloseByEsc);
 modalBtnClose.addEventListener('click', modalClose);
 window.addEventListener("keydown", modalImgScrolling);
+
 modalBtnRight.addEventListener("click", modalImgScrolling);
 modalBtnLeft.addEventListener("click", modalImgScrolling);
+modalContent.addEventListener("click", modalImgScrolling);
 
 
 function galleryCardMarkup(img) {
@@ -78,7 +81,7 @@ function modalImgScrolling(event) {
         imgIndex -= 1;
     };
 
-    if (event.code === 'ArrowRight' || event.code === 'ArrowUp' || modalBtnRight === event.target) {
+    if (event.code === 'ArrowRight' || event.code === 'ArrowUp' || modalBtnRight === event.target || modalContent === event.target) {
         if (imgIndex === galleryItems.length - 1) {
             imgIndex -= galleryItems.length;
         }

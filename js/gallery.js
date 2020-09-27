@@ -11,9 +11,9 @@ const modalBtnLeft = document.querySelector(".scroll-left");
 
 
 galleryContainer.addEventListener('click', modalOpen);
+overlay.addEventListener("click", modalCloseByOverlayClick);
+document.addEventListener("keydown", modalCloseByEsc);
 modalBtnClose.addEventListener('click', modalClose);
-overlay.addEventListener("click", modalClose);
-galleryContainer.addEventListener("keydown", modalClose);
 window.addEventListener("keydown", modalImgScrolling);
 modalBtnRight.addEventListener("click", modalImgScrolling);
 modalBtnLeft.addEventListener("click", modalImgScrolling);
@@ -44,18 +44,28 @@ function modalOpen(event) {
     modal.classList.add("is-open");
     modalImg.src = event.target.dataset.source;
     modalImg.alt = event.target.alt;
+
+
 };
 
 function modalClose(event) {
-    if (event.currentTarget === event.target || event.code === "Escape") {
-        modal.classList.remove("is-open");
-    } else {
-        modal.classList.remove("is-open")
-    };
-
-    modalImg.src = "";
-    modalImg.alt = "";
+    modal.classList.remove("is-open");
 };
+
+function modalCloseByEsc(event) {
+    if (event.code === "Escape") {
+        modalClose(event)
+    }
+
+};
+
+function modalCloseByOverlayClick(event) {
+    if (event.currentTarget === event.target) {
+        modalClose(event)
+    }
+
+};
+
 
 function modalImgScrolling(event) {
 

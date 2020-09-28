@@ -65,7 +65,7 @@ function modalClose(event) {
 function modalCloseByEsc(event) {
     if (event.code === "Escape") {
         modalClose(event)
-        document.removeEventListener("keydown", modalCloseByEsc);
+        //document.removeEventListener("keydown", modalCloseByEsc);
     }
     
   //  window.removeEventListener("keydown", modalImgScrolling);
@@ -77,7 +77,7 @@ function modalCloseByEsc(event) {
 function modalCloseByOverlayClick(event) {
     if (event.currentTarget === event.target) {
         modalClose(event)
-        overlay.removeEventListener("click", modalCloseByOverlayClick);
+       // overlay.removeEventListener("click", modalCloseByOverlayClick);
     }
     
     //window.removeEventListener("keydown", modalImgScrolling);

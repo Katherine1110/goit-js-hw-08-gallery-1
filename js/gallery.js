@@ -13,9 +13,7 @@ const modalBtnLeft = document.querySelector(".scroll-left");
 
     galleryContainer.addEventListener('click', modalOpen);
     galleryContainer.insertAdjacentHTML("beforeend", galleryCardMarkup(galleryItems));
-    overlay.addEventListener("click", modalCloseByOverlayClick);
-    document.addEventListener("keydown", modalCloseByEsc);
-    modalBtnClose.addEventListener('click', modalClose);
+
     window.addEventListener("keydown", modalImgScrolling);
     modalBtnRight.addEventListener("click", modalImgScrolling);
     modalBtnLeft.addEventListener("click", modalImgScrolling);
@@ -48,6 +46,9 @@ function modalOpen(event) {
     modal.classList.add("is-open");
     modalImg.src = event.target.dataset.source;
     modalImg.alt = event.target.alt;
+    overlay.addEventListener("click", modalCloseByOverlayClick);
+    document.addEventListener("keydown", modalCloseByEsc);
+    modalBtnClose.addEventListener('click', modalClose);
 
  
 };

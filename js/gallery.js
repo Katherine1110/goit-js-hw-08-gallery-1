@@ -14,10 +14,7 @@ const modalBtnLeft = document.querySelector(".scroll-left");
     galleryContainer.addEventListener('click', modalOpen);
     galleryContainer.insertAdjacentHTML("beforeend", galleryCardMarkup(galleryItems));
 
-    window.addEventListener("keydown", modalImgScrolling);
-    modalBtnRight.addEventListener("click", modalImgScrolling);
-    modalBtnLeft.addEventListener("click", modalImgScrolling);
-    modalContent.addEventListener("click", modalImgScrolling);
+   
     
 
 
@@ -49,6 +46,10 @@ function modalOpen(event) {
     overlay.addEventListener("click", modalCloseByOverlayClick);
     document.addEventListener("keydown", modalCloseByEsc);
     modalBtnClose.addEventListener('click', modalClose);
+     window.addEventListener("keydown", modalImgScrolling);
+    modalBtnRight.addEventListener("click", modalImgScrolling);
+    modalBtnLeft.addEventListener("click", modalImgScrolling);
+    modalContent.addEventListener("click", modalImgScrolling);
     
 };
 
@@ -57,10 +58,10 @@ function modalClose(event) {
     overlay.removeEventListener("click", modalCloseByOverlayClick);
     document.removeEventListener("keydown", modalCloseByEsc);
     modalBtnClose.removeEventListener('click', modalClose);
-      //window.removeEventListener("keydown", modalImgScrolling);
-    //modalBtnRight.removeEventListener("click", modalImgScrolling);
-    //modalBtnLeft.removeEventListener("click", modalImgScrolling);
-   //modalContent.removeEventListener("click", modalImgScrolling);
+    window.removeEventListener("keydown", modalImgScrolling);
+    modalBtnRight.removeEventListener("click", modalImgScrolling);
+    modalBtnLeft.removeEventListener("click", modalImgScrolling);
+    modalContent.removeEventListener("click", modalImgScrolling);
 };
 
 function modalCloseByEsc(event) {

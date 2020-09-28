@@ -30,6 +30,13 @@ function galleryCardMarkup(img) {
 };
 
 galleryContainer.insertAdjacentHTML("beforeend", galleryCardMarkup(galleryItems));
+   overlay.addEventListener("click", modalCloseByOverlayClick);
+    document.addEventListener("keydown", modalCloseByEsc);
+    modalBtnClose.addEventListener('click', modalClose);
+    window.addEventListener("keydown", modalImgScrolling);
+    modalBtnRight.addEventListener("click", modalImgScrolling);
+    modalBtnLeft.addEventListener("click", modalImgScrolling);
+    modalContent.addEventListener("click", modalImgScrolling);
 
 function modalOpen(event) {
     event.preventDefault();
@@ -41,13 +48,7 @@ function modalOpen(event) {
     modalImg.src = event.target.dataset.source;
     modalImg.alt = event.target.alt;
 
-    overlay.addEventListener("click", modalCloseByOverlayClick);
-    document.addEventListener("keydown", modalCloseByEsc);
-    modalBtnClose.addEventListener('click', modalClose);
-    window.addEventListener("keydown", modalImgScrolling);
-    modalBtnRight.addEventListener("click", modalImgScrolling);
-    modalBtnLeft.addEventListener("click", modalImgScrolling);
-    modalContent.addEventListener("click", modalImgScrolling);
+ 
 };
 
 function modalClose(event) {

@@ -9,15 +9,9 @@ const modalBtnClose = document.querySelector(".lightbox__button");
 const modalBtnRight = document.querySelector(".scroll-right");
 const modalBtnLeft = document.querySelector(".scroll-left");
 
-
-
-    galleryContainer.addEventListener('click', modalOpen);
-    galleryContainer.insertAdjacentHTML("beforeend", galleryCardMarkup(galleryItems));
-
+galleryContainer.addEventListener('click', modalOpen);
+galleryContainer.insertAdjacentHTML("beforeend", galleryCardMarkup(galleryItems));
    
-    
-
-
 function galleryCardMarkup(img) {
     return img.map(({ preview, original, description }) => {
         return `<li class="gallery__item">
@@ -31,8 +25,6 @@ function galleryCardMarkup(img) {
                     </li>`
     }).join("");
 };
-
-
 
 function modalOpen(event) {
     event.preventDefault();
@@ -49,8 +41,7 @@ function modalOpen(event) {
      window.addEventListener("keydown", modalImgScrolling);
     modalBtnRight.addEventListener("click", modalImgScrolling);
     modalBtnLeft.addEventListener("click", modalImgScrolling);
-    modalContent.addEventListener("click", modalImgScrolling);
-    
+    modalContent.addEventListener("click", modalImgScrolling);   
 };
 
 function modalClose(event) {
@@ -66,26 +57,14 @@ function modalClose(event) {
 
 function modalCloseByEsc(event) {
     if (event.code === "Escape") {
-        modalClose(event)
-        //document.removeEventListener("keydown", modalCloseByEsc);
+        modalClose(event)        
     }
-    
-  //  window.removeEventListener("keydown", modalImgScrolling);
-  //  modalBtnRight.removeEventListener("click", modalImgScrolling);
-  //  modalBtnLeft.removeEventListener("click", modalImgScrolling);
-   // modalContent.removeEventListener("click", modalImgScrolling);
 };
 
 function modalCloseByOverlayClick(event) {
     if (event.currentTarget === event.target) {
-        modalClose(event)
-       // overlay.removeEventListener("click", modalCloseByOverlayClick);
+        modalClose(event)      
     }
-    
-    //window.removeEventListener("keydown", modalImgScrolling);
-    //modalBtnRight.removeEventListener("click", modalImgScrolling);
-   // modalBtnLeft.removeEventListener("click", modalImgScrolling);
-   // modalContent.removeEventListener("click", modalImgScrolling);
 };
 
 

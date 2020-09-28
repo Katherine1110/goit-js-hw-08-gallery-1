@@ -18,7 +18,9 @@ const modalBtnLeft = document.querySelector(".scroll-left");
     modalBtnRight.addEventListener("click", modalImgScrolling);
     modalBtnLeft.addEventListener("click", modalImgScrolling);
     modalContent.addEventListener("click", modalImgScrolling);
-
+    overlay.addEventListener("click", modalCloseByOverlayClick);
+    document.addEventListener("keydown", modalCloseByEsc);
+    modalBtnClose.addEventListener('click', modalClose);
 
 
 function galleryCardMarkup(img) {
@@ -46,9 +48,7 @@ function modalOpen(event) {
     modal.classList.add("is-open");
     modalImg.src = event.target.dataset.source;
     modalImg.alt = event.target.alt;
-    overlay.addEventListener("click", modalCloseByOverlayClick);
-    document.addEventListener("keydown", modalCloseByEsc);
-    modalBtnClose.addEventListener('click', modalClose);
+    
 
  
 };

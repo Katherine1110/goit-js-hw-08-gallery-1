@@ -53,10 +53,10 @@ function modalOpen(event) {
 function modalClose(event) {
     modal.classList.remove("is-open");
     modalBtnClose.removeEventListener('click', modalClose);
-    window.removeEventListener("keydown", modalImgScrolling);
-    modalBtnRight.removeEventListener("click", modalImgScrolling);
-    modalBtnLeft.removeEventListener("click", modalImgScrolling);
-    modalContent.removeEventListener("click", modalImgScrolling);
+    //window.removeEventListener("keydown", modalImgScrolling);
+    //modalBtnRight.removeEventListener("click", modalImgScrolling);
+ //   modalBtnLeft.removeEventListener("click", modalImgScrolling);
+   // modalContent.removeEventListener("click", modalImgScrolling);
 };
 
 function modalCloseByEsc(event) {
@@ -64,10 +64,10 @@ function modalCloseByEsc(event) {
         modalClose(event)
     }
     document.removeEventListener("keydown", modalCloseByEsc);
-    window.removeEventListener("keydown", modalImgScrolling);
-    modalBtnRight.removeEventListener("click", modalImgScrolling);
-    modalBtnLeft.removeEventListener("click", modalImgScrolling);
-    modalContent.removeEventListener("click", modalImgScrolling);
+  //  window.removeEventListener("keydown", modalImgScrolling);
+  //  modalBtnRight.removeEventListener("click", modalImgScrolling);
+  //  modalBtnLeft.removeEventListener("click", modalImgScrolling);
+   // modalContent.removeEventListener("click", modalImgScrolling);
 };
 
 function modalCloseByOverlayClick(event) {
@@ -75,10 +75,10 @@ function modalCloseByOverlayClick(event) {
         modalClose(event)
     }
     overlay.removeEventListener("click", modalCloseByOverlayClick);
-    window.removeEventListener("keydown", modalImgScrolling);
-    modalBtnRight.removeEventListener("click", modalImgScrolling);
-    modalBtnLeft.removeEventListener("click", modalImgScrolling);
-    modalContent.removeEventListener("click", modalImgScrolling);
+    //window.removeEventListener("keydown", modalImgScrolling);
+    //modalBtnRight.removeEventListener("click", modalImgScrolling);
+   // modalBtnLeft.removeEventListener("click", modalImgScrolling);
+   // modalContent.removeEventListener("click", modalImgScrolling);
 };
 
 

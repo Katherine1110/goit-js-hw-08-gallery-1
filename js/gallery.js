@@ -78,7 +78,7 @@ function modalCloseByOverlayClick(event) {
     window.removeEventListener("keydown", modalImgScrolling);
     modalBtnRight.removeEventListener("click", modalImgScrolling);
     modalBtnLeft.removeEventListener("click", modalImgScrolling);
-    modalContent.removeEventListener("click", modalImgScrollinremove);
+    modalContent.removeEventListener("click", modalImgScrolling);
 };
 
 
